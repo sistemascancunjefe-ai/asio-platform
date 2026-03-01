@@ -1,0 +1,33 @@
+{
+  "name": "asio-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ASIO Marketing Platform — Astro 4 + Cloudflare Edge + AI Agent",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "workers/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "preview": "turbo run preview",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "deploy": "turbo run deploy",
+    "deploy:marketing": "npm run build -w apps/marketing && wrangler pages deploy apps/marketing/dist",
+    "deploy:workers": "npm run deploy -w workers/routing && npm run deploy -w workers/agent-bridge",
+    "agent:dev": "cd agent-api && python -m uvicorn app.main:app --reload --port 8001",
+    "agent:docker": "docker compose -f agent-api/docker-compose.yml up -d"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "wrangler": "^3.60.0",
+    "typescript": "^5.4.5",
+    "prettier": "^3.2.5"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

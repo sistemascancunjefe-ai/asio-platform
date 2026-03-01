@@ -1,0 +1,119 @@
+---
+export interface Props {
+  lang?: 'es' | 'en';
+}
+const { lang = 'es' } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-dark border-top border-purple pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <!-- Brand -->
+      <div class="col-lg-4">
+        <a href={lang === 'es' ? '/' : '/en'} class="text-decoration-none">
+          <span class="fs-3 fw-800 text-gradient">ASIO</span>
+        </a>
+        <p class="text-muted mt-2 small">
+          {lang === 'es'
+            ? 'Automatización e Inteligencia para transformar tu negocio. Cancún, México.'
+            : 'Automation & Intelligence to transform your business. Cancún, Mexico.'}
+        </p>
+        <div class="d-flex gap-3 mt-3">
+          <a href="https://wa.me/529988000000" class="text-muted fs-5" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="https://t.me/asiobot" class="text-muted fs-5" aria-label="Telegram">
+            <i class="bi bi-telegram"></i>
+          </a>
+          <a href="https://linkedin.com/company/asio" class="text-muted fs-5" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="https://github.com/asio-dev" class="text-muted fs-5" aria-label="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Servicios -->
+      <div class="col-sm-6 col-lg-2 offset-lg-1">
+        <h6 class="text-white fw-700 mb-3">
+          {lang === 'es' ? 'Servicios' : 'Services'}
+        </h6>
+        <ul class="list-unstyled small">
+          {[
+            { href: lang === 'es' ? '/servicios#automatizacion' : '/en/services#automation', label: lang === 'es' ? 'Automatización' : 'Automation' },
+            { href: lang === 'es' ? '/servicios#agentes-ia' : '/en/services#ai-agents', label: lang === 'es' ? 'Agentes IA' : 'AI Agents' },
+            { href: lang === 'es' ? '/servicios#desarrollo-web' : '/en/services#web-dev', label: lang === 'es' ? 'Desarrollo Web' : 'Web Dev' },
+            { href: lang === 'es' ? '/servicios#datos' : '/en/services#data', label: lang === 'es' ? 'Análisis de Datos' : 'Data Analytics' },
+          ].map(link => (
+            <li class="mb-2">
+              <a href={link.href} class="text-muted text-decoration-none footer-link">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Empresa -->
+      <div class="col-sm-6 col-lg-2">
+        <h6 class="text-white fw-700 mb-3">
+          {lang === 'es' ? 'Empresa' : 'Company'}
+        </h6>
+        <ul class="list-unstyled small">
+          {[
+            { href: lang === 'es' ? '/nosotros' : '/en/about', label: lang === 'es' ? 'Nosotros' : 'About' },
+            { href: lang === 'es' ? '/portafolio' : '/en/portfolio', label: lang === 'es' ? 'Portafolio' : 'Portfolio' },
+            { href: lang === 'es' ? '/blog' : '/en/blog', label: 'Blog' },
+            { href: lang === 'es' ? '/contacto' : '/en/contact', label: lang === 'es' ? 'Contacto' : 'Contact' },
+          ].map(link => (
+            <li class="mb-2">
+              <a href={link.href} class="text-muted text-decoration-none footer-link">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Newsletter / CTA -->
+      <div class="col-lg-3">
+        <h6 class="text-white fw-700 mb-3">
+          {lang === 'es' ? '¿Listo para automatizar?' : 'Ready to automate?'}
+        </h6>
+        <p class="text-muted small mb-3">
+          {lang === 'es'
+            ? 'Habla con ARIA, nuestra IA, y descubre cómo podemos ayudarte.'
+            : 'Talk to ARIA, our AI, and discover how we can help you.'}
+        </p>
+        <a href={lang === 'es' ? '/contacto' : '/en/contact'} class="btn btn-gradient btn-sm w-100">
+          <i class="bi bi-robot me-1"></i>
+          {lang === 'es' ? 'Hablar con ARIA' : 'Talk to ARIA'}
+        </a>
+      </div>
+    </div>
+
+    <hr class="border-secondary" />
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="text-muted small mb-0">
+        © {year} ASIO. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+      </p>
+      <div class="d-flex gap-3">
+        <a href={lang === 'es' ? '/privacidad' : '/en/privacy'} class="text-muted small text-decoration-none footer-link">
+          {lang === 'es' ? 'Privacidad' : 'Privacy'}
+        </a>
+        <a href={lang === 'es' ? '/terminos' : '/en/terms'} class="text-muted small text-decoration-none footer-link">
+          {lang === 'es' ? 'Términos' : 'Terms'}
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .fw-700 { font-weight: 700; }
+  .fw-800 { font-weight: 800; }
+  .border-purple { border-color: rgba(103, 56, 255, 0.2) !important; }
+  .footer-link:hover { color: var(--asio-accent) !important; }
+</style>

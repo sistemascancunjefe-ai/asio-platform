@@ -1,0 +1,228 @@
+---
+import Base from '../layouts/Base.astro';
+import Navbar from '../components/ui/Navbar.astro';
+import Footer from '../components/ui/Footer.astro';
+import ChatWidget from '../components/islands/ChatWidget';
+
+const services = [
+  {
+    icon: 'bi-robot',
+    title: 'Agentes de IA',
+    desc: 'Agentes conversacionales inteligentes para WhatsApp, Telegram y web que atienden, califican y convierten.',
+    tag: 'IA Generativa',
+    color: '#6738FF',
+  },
+  {
+    icon: 'bi-gear-wide-connected',
+    title: 'Automatización de Procesos',
+    desc: 'Eliminamos tareas repetitivas con RPA y flujos inteligentes. Hasta 90% de reducción en trabajo manual.',
+    tag: 'RPA / n8n',
+    color: '#00D4FF',
+  },
+  {
+    icon: 'bi-code-slash',
+    title: 'Desarrollo Web',
+    desc: 'Plataformas web ultra-rápidas con Astro, React y tecnologías Edge. Lighthouse >95 garantizado.',
+    tag: 'Astro / React',
+    color: '#A855F7',
+  },
+  {
+    icon: 'bi-bar-chart-line',
+    title: 'Análisis de Datos',
+    desc: 'Dashboards en tiempo real, reportes automáticos y pipelines de datos que convierten números en decisiones.',
+    tag: 'Python / SQL',
+    color: '#10B981',
+  },
+  {
+    icon: 'bi-whatsapp',
+    title: 'WhatsApp Business',
+    desc: 'Integración oficial Meta API. Notificaciones automáticas, chatbots y campañas masivas de alto impacto.',
+    tag: 'Meta API',
+    color: '#25D366',
+  },
+  {
+    icon: 'bi-shield-check',
+    title: 'Consultoría Técnica',
+    desc: 'Auditoría de sistemas, arquitectura de soluciones y acompañamiento en tu transformación digital.',
+    tag: 'Enterprise',
+    color: '#F59E0B',
+  },
+];
+
+const stats = [
+  { value: '90%', label: 'Reducción de trabajo manual' },
+  { value: '<3s', label: 'Tiempo de respuesta IA' },
+  { value: '95+', label: 'Lighthouse Score' },
+  { value: '24/7', label: 'Agentes activos' },
+];
+---
+
+<Base title="Automatización e IA para tu Negocio" lang="es">
+  <Navbar lang="es" currentPath="/" />
+
+  <!-- ═══ HERO ═══════════════════════════════════════════════════════ -->
+  <section class="hero-bg d-flex align-items-center">
+    <div class="container pt-5">
+      <div class="row align-items-center min-vh-100 py-5">
+        <div class="col-lg-7">
+          <span class="badge rounded-pill mb-3 px-3 py-2"
+                style="background: rgba(103,56,255,0.15); color: #A78BFA; border: 1px solid rgba(103,56,255,0.3);">
+            <i class="bi bi-stars me-1"></i> Impulsado por IA Generativa
+          </span>
+          <h1 class="display-4 fw-800 lh-sm mb-4">
+            Automatiza tu negocio con
+            <span class="text-gradient d-block">Inteligencia Artificial</span>
+          </h1>
+          <p class="lead text-muted mb-5" style="max-width: 540px;">
+            Transformamos procesos manuales en sistemas inteligentes.
+            Desde agentes conversacionales hasta pipelines de datos —
+            construimos la tecnología que te hace escalar.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/contacto" class="btn btn-gradient btn-lg">
+              <i class="bi bi-chat-dots me-2"></i>Habla con ARIA gratis
+            </a>
+            <a href="/portafolio" class="btn btn-outline-secondary btn-lg">
+              <i class="bi bi-folder2-open me-2"></i>Ver portafolio
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="row g-3 mt-5">
+            {stats.map(s => (
+              <div class="col-6 col-md-3">
+                <div class="text-center p-3 rounded-3"
+                     style="background: rgba(103,56,255,0.08); border: 1px solid rgba(103,56,255,0.15);">
+                  <div class="fs-4 fw-800 text-gradient">{s.value}</div>
+                  <div class="small text-muted mt-1">{s.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="position-relative">
+            <!-- Floating card simulando el agente IA -->
+            <div class="card-glow p-4 mx-auto" style="max-width: 380px;">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                     style="width:48px;height:48px;background:linear-gradient(135deg,#6738FF,#00D4FF);">
+                  <i class="bi bi-robot text-white fs-5"></i>
+                </div>
+                <div>
+                  <div class="fw-700 text-white">ARIA</div>
+                  <div class="small text-success"><i class="bi bi-circle-fill me-1" style="font-size:8px;"></i>En línea</div>
+                </div>
+              </div>
+              <div class="bg-dark rounded-3 p-3 mb-3 small text-muted border border-secondary">
+                👋 Hola! Soy ARIA, la IA de ASIO. ¿En qué puedo ayudarte hoy?
+              </div>
+              <div class="bg-purple-subtle rounded-3 p-3 small text-white text-end"
+                   style="background:rgba(103,56,255,0.2);">
+                Necesito automatizar las validaciones de mi almacén
+              </div>
+              <div class="bg-dark rounded-3 p-3 mt-3 small text-muted border border-secondary">
+                <i class="bi bi-stars text-warning me-1"></i>
+                ¡Perfecto! Tengo experiencia con sistemas WMS. Cuéntame más sobre tu proceso actual...
+              </div>
+              <div class="mt-3 d-flex gap-2">
+                <div class="rounded-pill px-3 py-1 small border"
+                     style="border-color:rgba(103,56,255,0.3)!important;color:#A78BFA;">
+                  <i class="bi bi-whatsapp me-1"></i>WhatsApp
+                </div>
+                <div class="rounded-pill px-3 py-1 small border"
+                     style="border-color:rgba(0,212,255,0.3)!important;color:#67E8F9;">
+                  <i class="bi bi-telegram me-1"></i>Telegram
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICIOS ════════════════════════════════════════════════════ -->
+  <section class="section-py" id="servicios"
+           style="background: linear-gradient(180deg, var(--asio-dark) 0%, var(--asio-surface) 100%);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge rounded-pill px-3 py-2 mb-3"
+              style="background:rgba(103,56,255,0.15);color:#A78BFA;border:1px solid rgba(103,56,255,0.3);">
+          Nuestros Servicios
+        </span>
+        <h2 class="display-5 fw-800">
+          Tecnología que <span class="text-gradient">genera resultados</span>
+        </h2>
+        <p class="text-muted lead mt-3" style="max-width:600px;margin:auto;">
+          Combinamos automatización, IA y desarrollo de software para crear sistemas
+          que trabajan mientras tú te enfocas en lo que importa.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        {services.map(s => (
+          <div class="col-md-6 col-lg-4">
+            <div class="card-glow p-4 h-100">
+              <div class="rounded-3 d-inline-flex p-3 mb-4"
+                   style={`background: ${s.color}22;`}>
+                <i class={`bi ${s.icon} fs-4`} style={`color: ${s.color}`}></i>
+              </div>
+              <span class="badge rounded-pill mb-2 small"
+                    style={`background: ${s.color}22; color: ${s.color};`}>
+                {s.tag}
+              </span>
+              <h5 class="fw-700 text-white mb-2">{s.title}</h5>
+              <p class="text-muted small mb-0">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/servicios" class="btn btn-gradient btn-lg">
+          Ver todos los servicios <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA FINAL ════════════════════════════════════════════════════ -->
+  <section class="section-py">
+    <div class="container">
+      <div class="card-glow text-center p-5"
+           style="background: linear-gradient(135deg, rgba(103,56,255,0.15) 0%, rgba(0,212,255,0.05) 100%);">
+        <i class="bi bi-robot display-5 text-gradient mb-3"></i>
+        <h2 class="fw-800 text-white mb-3">
+          ¿Listo para automatizar con IA?
+        </h2>
+        <p class="text-muted lead mb-4" style="max-width:500px;margin:auto;">
+          Habla con ARIA ahora mismo — sin costo, sin compromiso.
+          Descubre en minutos qué podemos hacer por tu negocio.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a href="/contacto" class="btn btn-gradient btn-lg">
+            <i class="bi bi-chat-dots me-2"></i>Iniciar conversación
+          </a>
+          <a href="https://wa.me/529988000000?text=Hola%20ASIO%2C%20quiero%20saber%20m%C3%A1s"
+             target="_blank" rel="noopener"
+             class="btn btn-outline-success btn-lg">
+            <i class="bi bi-whatsapp me-2"></i>WhatsApp directo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang="es" />
+
+  <!-- Chat Widget Island -->
+  <ChatWidget client:load lang="es" />
+</Base>
+
+<style>
+  .fw-700 { font-weight: 700; }
+  .fw-800 { font-weight: 800; }
+</style>

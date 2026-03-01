@@ -1,0 +1,78 @@
+---
+export interface Props {
+  lang?: 'es' | 'en';
+  currentPath?: string;
+}
+
+const { lang = 'es', currentPath = '/' } = Astro.props;
+
+const navLinks = lang === 'es'
+  ? [
+      { href: '/',           label: 'Inicio' },
+      { href: '/servicios',  label: 'Servicios' },
+      { href: '/portafolio', label: 'Portafolio' },
+      { href: '/nosotros',   label: 'Nosotros' },
+      { href: '/contacto',   label: 'Contacto' },
+    ]
+  : [
+      { href: '/en',              label: 'Home' },
+      { href: '/en/services',     label: 'Services' },
+      { href: '/en/portfolio',    label: 'Portfolio' },
+      { href: '/en/about',        label: 'About' },
+      { href: '/en/contact',      label: 'Contact' },
+    ];
+
+const altLang = lang === 'es' ? { href: '/en', label: 'EN' } : { href: '/', label: 'ES' };
+---
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-blur fixed-top">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand fw-800 fs-4" href={lang === 'es' ? '/' : '/en'}>
+      <span class="text-gradient">ASIO</span>
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarMain"
+            aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-3"></i>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav mx-auto gap-1">
+        {navLinks.map(link => (
+          <li class="nav-item">
+            <a class:list={['nav-link px-3', { active: currentPath === link.href }]}
+               href={link.href}>
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA + Lang -->
+      <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+        <a href={altLang.href} class="text-muted small fw-600 text-decoration-none">
+          {altLang.label}
+        </a>
+        <a href={lang === 'es' ? '/contacto' : '/en/contact'}
+           class="btn btn-gradient btn-sm">
+          <i class="bi bi-chat-dots me-1"></i>
+          {lang === 'es' ? 'Hablemos' : 'Get Started'}
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .fw-800 { font-weight: 800; }
+  .navbar-blur {
+    transition: background 0.3s ease;
+  }
+  .nav-link.active {
+    color: var(--asio-accent) !important;
+  }
+</style>

@@ -1,0 +1,119 @@
+// ─── ASIO Brand Variables ─────────────────────────────────────
+$asio-purple:       #6738FF;
+$asio-lavender:     #EDEDF9;
+$asio-accent:       #00D4FF;
+$asio-dark:         #0D0D1A;
+$asio-surface:      #1A1A2E;
+$asio-text:         #E8E8F0;
+$asio-muted:        #8888AA;
+
+// ─── Bootstrap Overrides ──────────────────────────────────────
+$primary:           $asio-purple;
+$secondary:         $asio-accent;
+$dark:              $asio-dark;
+$light:             $asio-lavender;
+$body-bg:           $asio-dark;
+$body-color:        $asio-text;
+
+$font-family-base:  'Inter', 'Segoe UI', system-ui, sans-serif;
+$font-size-base:    1rem;
+$headings-font-weight: 700;
+
+$border-radius:     0.5rem;
+$border-radius-lg:  0.75rem;
+$border-radius-pill: 50rem;
+
+$box-shadow:        0 4px 24px rgba(103, 56, 255, 0.15);
+$box-shadow-lg:     0 8px 48px rgba(103, 56, 255, 0.25);
+
+$link-color:        $asio-accent;
+$link-hover-color:  lighten($asio-accent, 15%);
+
+$navbar-dark-color:           rgba(255, 255, 255, 0.85);
+$navbar-dark-hover-color:     $asio-accent;
+$navbar-dark-active-color:    #fff;
+$navbar-dark-brand-color:     #fff;
+
+$btn-font-weight:   600;
+$input-bg:          $asio-surface;
+$input-border-color: rgba(103, 56, 255, 0.3);
+$input-color:       $asio-text;
+$input-focus-border-color: $asio-purple;
+
+// ─── Bootstrap Import ─────────────────────────────────────────
+@import 'bootstrap/scss/bootstrap';
+
+// ─── ASIO Global Styles ───────────────────────────────────────
+:root {
+  --asio-purple:   #{$asio-purple};
+  --asio-lavender: #{$asio-lavender};
+  --asio-accent:   #{$asio-accent};
+  --asio-dark:     #{$asio-dark};
+  --asio-surface:  #{$asio-surface};
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: $asio-dark;
+  color: $asio-text;
+}
+
+// Gradient text utility
+.text-gradient {
+  background: linear-gradient(135deg, $asio-purple 0%, $asio-accent 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Glow card
+.card-glow {
+  background: $asio-surface;
+  border: 1px solid rgba(103, 56, 255, 0.2);
+  border-radius: $border-radius-lg;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(103, 56, 255, 0.6);
+    box-shadow: $box-shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+// Gradient button
+.btn-gradient {
+  background: linear-gradient(135deg, $asio-purple 0%, darken($asio-accent, 10%) 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.65rem 1.75rem;
+  border-radius: $border-radius-pill;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, lighten($asio-purple, 8%) 0%, $asio-accent 100%);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(103, 56, 255, 0.5);
+    transform: translateY(-1px);
+  }
+}
+
+// Section spacing
+.section-py { padding: 5rem 0; }
+.section-py-sm { padding: 3rem 0; }
+
+// Navbar blur
+.navbar-blur {
+  backdrop-filter: blur(12px);
+  background: rgba(13, 13, 26, 0.85) !important;
+  border-bottom: 1px solid rgba(103, 56, 255, 0.15);
+}
+
+// Animated gradient background
+.hero-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(103, 56, 255, 0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.10) 0%, transparent 60%),
+              $asio-dark;
+  min-height: 100vh;
+}

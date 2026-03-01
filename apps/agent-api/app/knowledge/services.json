@@ -1,0 +1,190 @@
+{
+  "company": {
+    "name": "ASIO",
+    "tagline": "Automatización e Inteligencia para tu Negocio",
+    "location": "Cancún, México",
+    "whatsapp": "https://wa.me/529988000000",
+    "telegram": "https://t.me/asiobot",
+    "email": "hola@asiomarketing.com",
+    "website": "https://asiomarketing.com"
+  },
+  "services": [
+    {
+      "id": "ai-agents",
+      "name": "Agentes de IA Conversacionales",
+      "short": "Chatbots y agentes IA para WhatsApp, Telegram y web",
+      "description": "Desarrollamos agentes conversacionales inteligentes usando modelos LLM (GPT-4, Claude, Groq) que atienden, califican y convierten clientes 24/7. Integración con WhatsApp Business API oficial de Meta, Telegram, y widgets web.",
+      "highlights": [
+        "Respuesta en <3 segundos",
+        "Integración WhatsApp Business API oficial",
+        "Memoria de conversación y contexto",
+        "Handoff a humano cuando se requiere",
+        "Dashboard de analytics",
+        "Multiidioma (ES/EN)"
+      ],
+      "use_cases": [
+        "Atención al cliente automatizada",
+        "Calificación de leads",
+        "Soporte técnico de primer nivel",
+        "Reservaciones y citas",
+        "Encuestas y seguimiento"
+      ],
+      "pricing": {
+        "model": "project",
+        "from_mxn": 15000,
+        "notes": "Precio depende de complejidad de flujos, integraciones y volumen de mensajes"
+      },
+      "tags": ["IA", "WhatsApp", "Telegram", "Chatbot", "LLM"]
+    },
+    {
+      "id": "process-automation",
+      "name": "Automatización de Procesos (RPA)",
+      "short": "Elimina tareas repetitivas con flujos inteligentes",
+      "description": "Automatizamos flujos de trabajo manuales usando Python, n8n, y custom RPA. Desde validación de documentos hasta integración entre sistemas legacy y modernos. Reducción de hasta 90% en trabajo manual.",
+      "highlights": [
+        "Hasta 90% reducción trabajo manual",
+        "Integración con sistemas legacy",
+        "Reportes automáticos",
+        "Alertas y notificaciones",
+        "Auditoría y logs completos",
+        "Sin código en operación diaria"
+      ],
+      "use_cases": [
+        "Validación de órdenes de compra",
+        "Procesamiento de facturas",
+        "Sincronización de inventarios",
+        "Generación de reportes automáticos",
+        "Conciliación de datos entre sistemas"
+      ],
+      "case_study": {
+        "client": "CEDIS Cancún (Distribución)",
+        "result": "Reducción de 2-3 horas a 15-20 minutos en validación de O/C. 85-90% automatización.",
+        "tech": "Python + IBM DB2 + Manhattan WMS"
+      },
+      "pricing": {
+        "model": "project",
+        "from_mxn": 20000,
+        "notes": "Depende del número de procesos y complejidad de integraciones"
+      },
+      "tags": ["Python", "RPA", "n8n", "Automatización", "WMS"]
+    },
+    {
+      "id": "web-development",
+      "name": "Desarrollo Web de Alto Rendimiento",
+      "short": "Sitios web y apps ultra-rápidas con Lighthouse >95",
+      "description": "Construimos plataformas web con Astro 4, React y tecnología Edge (Cloudflare). Garantizamos Lighthouse Score >95, LCP <1.2s y bundles JS minimizados. SEO técnico incluido.",
+      "highlights": [
+        "Lighthouse Score >95 garantizado",
+        "LCP <1.2s desde México",
+        "CDN Edge global (200+ PoPs)",
+        "SEO técnico completo",
+        "i18n ES/EN",
+        "A/B testing ready"
+      ],
+      "use_cases": [
+        "Landing pages de conversión",
+        "Portales corporativos",
+        "E-commerce",
+        "Plataformas SaaS",
+        "Sistemas internos PWA"
+      ],
+      "pricing": {
+        "model": "project",
+        "from_mxn": 12000,
+        "notes": "Landing pages desde $12,000 MXN. Plataformas completas desde $45,000 MXN"
+      },
+      "tags": ["Astro", "React", "Cloudflare", "SEO", "PWA"]
+    },
+    {
+      "id": "data-analytics",
+      "name": "Análisis de Datos & Business Intelligence",
+      "short": "Dashboards en tiempo real y pipelines de datos inteligentes",
+      "description": "Transformamos datos dispersos en insights accionables. Construimos pipelines ETL con Python, dashboards interactivos con Metabase/Power BI, y sistemas de reporteo automático.",
+      "highlights": [
+        "Dashboards en tiempo real",
+        "Integración fuentes múltiples",
+        "Reportes programados automáticos",
+        "Alertas por KPI",
+        "Exportación a WhatsApp/Email",
+        "SQL + Python optimizado"
+      ],
+      "use_cases": [
+        "KPIs operativos en tiempo real",
+        "Análisis de inventario",
+        "Métricas de ventas",
+        "Control de calidad",
+        "Auditoría y compliance"
+      ],
+      "pricing": {
+        "model": "project_or_retainer",
+        "from_mxn": 18000,
+        "notes": "Dashboard básico desde $18,000 MXN. Retainer mensual desde $8,000 MXN"
+      },
+      "tags": ["Python", "SQL", "Power BI", "Metabase", "ETL"]
+    },
+    {
+      "id": "whatsapp-business",
+      "name": "Integración WhatsApp Business API",
+      "short": "Automatización oficial Meta — notificaciones y campañas masivas",
+      "description": "Integración oficial con Meta Business API. Notificaciones transaccionales, campañas de marketing masivas, chatbots híbridos y análisis de conversaciones.",
+      "highlights": [
+        "API oficial Meta (no bots grises)",
+        "Hasta 10M mensajes/mes",
+        "Templates aprobados por Meta",
+        "Analytics de conversaciones",
+        "Multi-agente y escalamiento",
+        "CRM integration"
+      ],
+      "pricing": {
+        "model": "setup_plus_monthly",
+        "setup_mxn": 15000,
+        "monthly_from_mxn": 5000,
+        "notes": "Costo de mensajes Meta adicional según volumen"
+      },
+      "tags": ["WhatsApp", "Meta API", "Marketing", "CRM"]
+    },
+    {
+      "id": "technical-consulting",
+      "name": "Consultoría Técnica",
+      "short": "Auditoría, arquitectura de sistemas y transformación digital",
+      "description": "Auditamos tu infraestructura actual, identificamos cuellos de botella e ineficiencias, y diseñamos la arquitectura óptima para tu escala. Acompañamiento en implementación.",
+      "highlights": [
+        "Auditoría de sistemas existentes",
+        "Roadmap de transformación digital",
+        "Arquitectura de microservicios",
+        "Evaluación de stack tecnológico",
+        "Capacitación de equipo técnico"
+      ],
+      "pricing": {
+        "model": "hourly_or_project",
+        "hourly_mxn": 1500,
+        "from_mxn": 8000,
+        "notes": "Sesión de diagnóstico inicial gratuita"
+      },
+      "tags": ["Consultoría", "Arquitectura", "Enterprise", "Capacitación"]
+    }
+  ],
+  "packages": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "desc": "Para negocios que inician su automatización",
+      "price_mxn": 25000,
+      "includes": ["1 agente IA básico", "1 proceso automatizado", "Landing page", "Soporte 30 días"]
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "desc": "Para negocios que quieren escalar con IA",
+      "price_mxn": 65000,
+      "includes": ["Agente IA avanzado + WhatsApp", "3 procesos automatizados", "Sitio web completo", "Dashboard analytics", "Soporte 90 días"]
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "desc": "Transformación digital completa",
+      "price_mxn": "A cotizar",
+      "includes": ["Suite completa IA", "Automatización ilimitada", "Plataforma web custom", "BI & Analytics", "Retainer mensual", "Soporte 24/7"]
+    }
+  ]
+}
